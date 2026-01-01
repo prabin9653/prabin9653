@@ -355,6 +355,138 @@
             .experience-item {
                 margin-left: 1.5rem;
             }
+
+            <style>
+    .certificates {
+        background: white;
+        padding: 4rem 0;
+    }
+
+    .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .certificate-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 2px solid #f0f0f0;
+    }
+
+    .certificate-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    }
+
+    .certificate-image {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .certificate-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    .certificate-card:hover .certificate-image img {
+        transform: scale(1.05);
+    }
+
+    /* Placeholder for certificates without images */
+    .certificate-image::after {
+        content: '🎓';
+        position: absolute;
+        font-size: 4rem;
+        color: white;
+        opacity: 0.3;
+    }
+
+    .certificate-content {
+        padding: 1.5rem;
+    }
+
+    .certificate-content h3 {
+        color: #1a1a2e;
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+
+    .certificate-content .issuer {
+        color: #667eea;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        font-size: 1rem;
+    }
+
+    .certificate-content .issue-date {
+        color: #999;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .certificate-content .description {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+
+    .view-cert-btn {
+        display: inline-block;
+        padding: 0.6rem 1.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .view-cert-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Animation for certificate cards */
+    .certificate-card {
+        animation: fadeInUp 0.8s ease-out backwards;
+    }
+
+    .certificate-card:nth-child(1) { animation-delay: 0.1s; }
+    .certificate-card:nth-child(2) { animation-delay: 0.2s; }
+    .certificate-card:nth-child(3) { animation-delay: 0.3s; }
+    .certificate-card:nth-child(4) { animation-delay: 0.4s; }
+    .certificate-card:nth-child(5) { animation-delay: 0.5s; }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .certificates-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .certificate-image {
+            height: 200px;
+        }
+
+        .certificate-content h3 {
+            font-size: 1.1rem;
+        }
+    }
      </style>
 </head>
 <body>
@@ -366,6 +498,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -474,6 +607,86 @@
             </div>
         </div>
     </section>
+    <section id="certificates" class="certificates">
+    <div class="container">
+        <h2 class="section-title">Courses & Certifications</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; color: #666;">
+            Continuously expanding my expertise through professional certifications and specialized courses
+        </p>
+        
+        <div class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="certificates/certificate1.jpg" alt="Google Ads Certification">
+                </div>
+                <div class="certificate-content">
+                    <h3>Google Ads Certification</h3>
+                    <p class="issuer">Google Digital Academy</p>
+                    <p class="issue-date">Issued: January 2024</p>
+                    <p class="description">Comprehensive certification covering search, display, video, and shopping ads campaigns with advanced optimization techniques.</p>
+                    <a href="certificates/certificate1.jpg" target="_blank" class="view-cert-btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="certificates/certificate2.jpg" alt="Facebook Blueprint Certification">
+                </div>
+                <div class="certificate-content">
+                    <h3>Meta Certified Digital Marketing Associate</h3>
+                    <p class="issuer">Meta Blueprint</p>
+                    <p class="issue-date">Issued: November 2023</p>
+                    <p class="description">Professional certification in Facebook and Instagram advertising, audience targeting, and campaign optimization strategies.</p>
+                    <a href="certificates/certificate2.jpg" target="_blank" class="view-cert-btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="certificates/certificate3.jpg" alt="HubSpot Content Marketing">
+                </div>
+                <div class="certificate-content">
+                    <h3>Content Marketing Certification</h3>
+                    <p class="issuer">HubSpot Academy</p>
+                    <p class="issue-date">Issued: September 2023</p>
+                    <p class="description">Advanced content marketing strategies, storytelling techniques, and content distribution methods for maximum engagement.</p>
+                    <a href="certificates/certificate3.jpg" target="_blank" class="view-cert-btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="certificates/certificate4.jpg" alt="Google Analytics Certification">
+                </div>
+                <div class="certificate-content">
+                    <h3>Google Analytics 4 Certification</h3>
+                    <p class="issuer">Google Skillshop</p>
+                    <p class="issue-date">Issued: July 2023</p>
+                    <p class="description">Expert-level proficiency in GA4, data analysis, custom reporting, and conversion tracking for data-driven decision making.</p>
+                    <a href="certificates/certificate4.jpg" target="_blank" class="view-cert-btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="certificates/certificate5.jpg" alt="SEO Specialization">
+                </div>
+                <div class="certificate-content">
+                    <h3>Advanced SEO Specialization</h3>
+                    <p class="issuer">Coursera - UC Davis</p>
+                    <p class="issue-date">Issued: May 2023</p>
+                    <p class="description">Comprehensive SEO training covering technical SEO, keyword research, link building, and search engine optimization best practices.</p>
+                    <a href="certificates/certificate5.jpg" target="_blank" class="view-cert-btn">View Certificate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id="contact" class="contact">
         <div class="container">
@@ -508,6 +721,7 @@
 </body>
 
 </html>
+
 
 
 
