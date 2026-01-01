@@ -356,19 +356,16 @@
                 margin-left: 1.5rem;
             }
 
-        #certificates {
+       #certificates {
         background: white;
         padding: 4rem 0;
     }
 
     .certificates-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
         margin-top: 2rem;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .certificate-card {
@@ -377,10 +374,7 @@
         border-radius: 10px;
         box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         transition: transform 0.3s, box-shadow 0.3s;
-        display: flex;
-        align-items: flex-start;
-        gap: 1.5rem;
-        text-align: left;
+        text-align: center;
     }
 
     .certificate-card:hover {
@@ -389,26 +383,23 @@
     }
 
     .certificate-icon {
-        font-size: 2.5rem;
-        flex-shrink: 0;
-        width: 70px;
-        height: 70px;
-        line-height: 70px;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 50%;
         color: white;
         box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        text-align: center;
-    }
-
-    .certificate-content {
-        flex: 1;
     }
 
     .certificate-card h3 {
         color: #1a1a2e;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.8rem;
         font-size: 1.2rem;
+        min-height: 2.4em;
         line-height: 1.3;
     }
 
@@ -422,14 +413,14 @@
     .certificate-card .issue-date {
         color: #999;
         font-size: 0.85rem;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
     }
 
     .certificate-card .description {
         color: #666;
         font-size: 0.95rem;
         line-height: 1.6;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
         text-align: left;
     }
 
@@ -461,28 +452,13 @@
     /* Responsive Design */
     @media (max-width: 768px) {
         .certificates-grid {
-            gap: 1.2rem;
-        }
-
-        .certificate-card {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .certificate-icon {
-            margin: 0 auto 1rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
         .certificate-card h3 {
             font-size: 1.1rem;
-        }
-
-        .certificate-content {
-            text-align: center;
-        }
-
-        .certificate-card .description {
-            text-align: center;
+            min-height: auto;
         }
     }
      </style>
@@ -606,7 +582,7 @@
         </div>
     </section>
     
-    <section id="certificates">
+ <section id="certificates">
     <div class="container">
         <h2 class="section-title">Courses & Certifications</h2>
         <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; color: #666;">
@@ -617,61 +593,51 @@
             <!-- Certificate 1 -->
             <div class="certificate-card">
                 <div class="certificate-icon">🎯</div>
-                <div class="certificate-content">
-                    <h3>Google Ads Certification</h3>
-                    <p class="issuer">Google Digital Academy</p>
-                    <p class="issue-date">Issued: January 2024</p>
-                    <p class="description">Comprehensive certification covering search, display, video, and shopping ads campaigns with advanced optimization techniques.</p>
-                    <a href="certificates/certificate1.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
-                </div>
+                <h3>Google Ads Certification</h3>
+                <p class="issuer">Google Digital Academy</p>
+                <p class="issue-date">Issued: January 2024</p>
+                <p class="description">Comprehensive certification covering search, display, video, and shopping ads campaigns with advanced optimization techniques.</p>
+                <a href="certificates/certificate1.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
             </div>
 
             <!-- Certificate 2 -->
             <div class="certificate-card">
                 <div class="certificate-icon">📱</div>
-                <div class="certificate-content">
-                    <h3>Meta Certified Digital Marketing Associate</h3>
-                    <p class="issuer">Meta Blueprint</p>
-                    <p class="issue-date">Issued: November 2023</p>
-                    <p class="description">Professional certification in Facebook and Instagram advertising, audience targeting, and campaign optimization strategies.</p>
-                    <a href="certificates/certificate2.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
-                </div>
+                <h3>Meta Certified Digital Marketing Associate</h3>
+                <p class="issuer">Meta Blueprint</p>
+                <p class="issue-date">Issued: November 2023</p>
+                <p class="description">Professional certification in Facebook and Instagram advertising, audience targeting, and campaign optimization strategies.</p>
+                <a href="certificates/certificate2.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
             </div>
 
             <!-- Certificate 3 -->
             <div class="certificate-card">
                 <div class="certificate-icon">✍️</div>
-                <div class="certificate-content">
-                    <h3>Content Marketing Certification</h3>
-                    <p class="issuer">HubSpot Academy</p>
-                    <p class="issue-date">Issued: September 2023</p>
-                    <p class="description">Advanced content marketing strategies, storytelling techniques, and content distribution methods for maximum engagement.</p>
-                    <a href="certificates/certificate3.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
-                </div>
+                <h3>Content Marketing Certification</h3>
+                <p class="issuer">HubSpot Academy</p>
+                <p class="issue-date">Issued: September 2023</p>
+                <p class="description">Advanced content marketing strategies, storytelling techniques, and content distribution methods for maximum engagement.</p>
+                <a href="certificates/certificate3.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
             </div>
 
             <!-- Certificate 4 -->
             <div class="certificate-card">
                 <div class="certificate-icon">📊</div>
-                <div class="certificate-content">
-                    <h3>Google Analytics 4 Certification</h3>
-                    <p class="issuer">Google Skillshop</p>
-                    <p class="issue-date">Issued: July 2023</p>
-                    <p class="description">Expert-level proficiency in GA4, data analysis, custom reporting, and conversion tracking for data-driven decision making.</p>
-                    <a href="certificates/certificate4.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
-                </div>
+                <h3>Google Analytics 4 Certification</h3>
+                <p class="issuer">Google Skillshop</p>
+                <p class="issue-date">Issued: July 2023</p>
+                <p class="description">Expert-level proficiency in GA4, data analysis, custom reporting, and conversion tracking for data-driven decision making.</p>
+                <a href="certificates/certificate4.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
             </div>
 
             <!-- Certificate 5 -->
             <div class="certificate-card">
                 <div class="certificate-icon">🔍</div>
-                <div class="certificate-content">
-                    <h3>Advanced SEO Specialization</h3>
-                    <p class="issuer">Coursera - UC Davis</p>
-                    <p class="issue-date">Issued: May 2023</p>
-                    <p class="description">Comprehensive SEO training covering technical SEO, keyword research, link building, and search engine optimization best practices.</p>
-                    <a href="certificates/certificate5.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
-                </div>
+                <h3>Advanced SEO Specialization</h3>
+                <p class="issuer">Coursera - UC Davis</p>
+                <p class="issue-date">Issued: May 2023</p>
+                <p class="description">Comprehensive SEO training covering technical SEO, keyword research, link building, and search engine optimization best practices.</p>
+                <a href="certificates/certificate5.jpg" target="_blank" class="view-cert-link">View Certificate →</a>
             </div>
         </div>
     </div>
@@ -710,6 +676,7 @@
 </body>
 
 </html>
+
 
 
 
